@@ -1,13 +1,331 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-size: 62.5%;
+  /* Variable declaration here */
+  --primary: #e0413c;
+  --light: #ffffff;
+  --dark: #111111;
+  --gray: #848484;
+  --dark-gray: #444444;
+
+  --gap8: 0.8rem;
+  --gap10: 1rem;
+  --gap12: 1.2rem;
+  --gap14: 1.4rem;
+  --gap16: 1.6rem;
+
+  --navbar_padding-default: 3rem 1.5rem;
+  --navbar_padding-scrolled: 2.5rem 1.5rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout styles starts */
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+.k__flex {
+  display: flex;
+  margin-left: calc(-1 * var(--gap12));
+  margin-top: calc(-1 * var(--gap12));
+}
+
+.k__flex-item {
+  padding-left: var(--gap12);
+  padding-top: var(--gap12);
+}
+
+.k__flex.k__flex--tight {
+  margin-left: calc(-1 * var(--gap10));
+  margin-top: calc(-1 * var(--gap10));
+}
+
+.k__flex.k__flex--tight > .k__flex-item {
+  padding-left: var(--gap10);
+  padding-top: var(--gap10);
+}
+
+.k__flex.k__flex--veryTight {
+  margin-left: calc(-1 * var(--gap8));
+  margin-top: calc(-1 * var(--gap8));
+}
+
+.k__flex.k__flex--veryTight > .k__flex-item {
+  padding-left: var(--gap8);
+  padding-top: var(--gap8);
+}
+
+.k__flex.k__flex--loose {
+  margin-left: calc(-1 * var(--gap14));
+  margin-top: calc(-1 * var(--gap14));
+}
+
+.k__flex.k__flex--loose > .k__flex-item {
+  padding-left: var(--gap14);
+  padding-top: var(--gap14);
+}
+
+.k__flex.k__flex--veryLoose {
+  margin-left: calc(-1 * var(--gap16));
+  margin-top: calc(-1 * var(--gap16));
+}
+
+.k__flex.k__flex--veryLoose > .k__flex-item {
+  padding-left: var(--gap16);
+  padding-top: var(--gap16);
+}
+
+.k__flex--wrap {
+  flex-wrap: wrap;
+}
+
+.k__flex--nowrap {
+  flex-wrap: nowrap;
+}
+
+.k__flex--column {
+  flex-direction: column;
+}
+
+.k__flex--align-start {
+  align-items: flex-start;
+}
+
+.k__flex--align-end {
+  align-items: flex-end;
+}
+
+.k__flex--align-center {
+  align-items: center;
+}
+
+.k__flex--justify-evenly {
+  justify-content: space-evenly;
+}
+
+.k__flex--justify-center {
+  justify-content: center;
+}
+
+.k__flex--justify-between {
+  justify-content: space-between;
+}
+
+.k__flex-item--20 {
+  width: 20%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--25 {
+  width: 25%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--30 {
+  width: 30%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--33 {
+  width: 33.33%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--40 {
+  width: 40%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--50 {
+  width: 50%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--60 {
+  width: 60%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--70 {
+  width: 70%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--75 {
+  width: 75%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--80 {
+  width: 80%;
+  flex: 0 0 auto;
+}
+
+.k__flex-item--100 {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.header__container {
+  box-shadow: 0 0.2rem 0.6rem rgb(209, 209, 209);
+  padding: var(--navbar_padding-default);
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header__container--shrinked {
+  padding: var(--navbar_padding-scrolled);
+}
+
+.header__container__logo h1 {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-size: 3rem;
+  background-image: linear-gradient(45deg, rgb(2, 0, 145), rgb(0, 167, 196));
+  color: transparent;
+  background-clip: text;
+}
+
+input[type="search"] {
+  border: 0.1rem solid grey;
+  border-radius: 0.5rem;
+  outline: 0;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+  width: 20rem;
+}
+
+input[type="search"]:focus {
+  width: 30rem;
+}
+
+.child__container {
+  position: fixed;
+  top: 10rem;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding-bottom: 10rem;
+  overflow-y: scroll;
+}
+
+/* width */
+.child__container::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+.child__container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(163, 163, 163);
+  border-radius: 10px;
+}
+
+/* Handle */
+.child__container::-webkit-scrollbar-thumb {
+  background: rgb(101, 101, 101);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.child__container::-webkit-scrollbar-thumb:hover {
+  background: #2b2b2b;
+}
+
+.card {
+  border: 0.1rem solid #949494;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  min-height: 30rem;
+  transition: all 0.2s ease-in-out;
+  width: 30rem;
+}
+
+.card img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.card:hover img {
+  transform: scale(1.4);
+  opacity: 0.3;
+}
+
+.overlay__container {
+  position: relative;
+}
+
+.overlay__container .box {
+  background-color: rgba(0, 113, 165, 0.74);
+  bottom: -15rem;
+  padding: 2rem 1rem;
+  position: absolute;
+  height: 15rem;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.overlay__container:hover .box {
+  bottom: 0;
+}
+
+.overlay__container:hover .box h3 {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.overlay__container:hover .box button {
+  background-color: transparent;
+  border: 0.3rem solid #fff;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.8rem 2rem;
+}
+
+.details__image {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.details__heading {
+  color: var(--dark-gray);
+  font-size: 3.5rem;
+  font-family: "PT Serif Caption", serif;
+}
+
+.details__desc {
+  font-size: 1.8rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.backButton {
+  background-color: transparent;
+  border: 0.1rem solid rgb(165, 165, 165);
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding: 0.5rem 1.5rem 1rem;
+  margin-bottom: 1.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.backButton:hover {
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.364);
 }
