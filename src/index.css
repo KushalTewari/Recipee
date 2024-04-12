@@ -5,6 +5,7 @@
   --light: #ffffff;
   --dark: #111111;
   --gray: #848484;
+  --light-gray: #565656;
   --dark-gray: #444444;
 
   --gap8: 0.8rem;
@@ -242,13 +243,22 @@ input[type="search"]:focus {
   background: #2b2b2b;
 }
 
+.mh-50 {
+  min-height: 50vh;
+}
+
 .card {
   border: 0.1rem solid #949494;
   border-radius: 0.5rem;
+  box-shadow: 0 0 0.8rem grey;
   overflow: hidden;
   min-height: 30rem;
   transition: all 0.2s ease-in-out;
   width: 30rem;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 0.8rem grey;
 }
 
 .card img {
@@ -309,9 +319,20 @@ input[type="search"]:focus {
   font-family: "PT Serif Caption", serif;
 }
 
+.details__heading img {
+  border-radius: 0.8rem;
+  width: 2.5rem;
+}
+
 .details__desc {
   font-size: 1.8rem;
   margin: 1.5rem 0 2rem;
+}
+
+ul li {
+  margin-left: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--light-gray);
 }
 
 .backButton {
@@ -328,4 +349,14 @@ input[type="search"]:focus {
 .backButton:hover {
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.364);
+}
+
+.tags {
+  background-color: rgb(177, 255, 177);
+  box-shadow: 0 0.2rem 0.5rem rgb(136, 136, 136);
+  border-radius: 0.5rem;
+  color: #014c01;
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+  width: max-content;
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Chip from "@mui/material/Chip";
+import NoImage from "../../assets/NoImage.jpg";
+import Veg from "../../assets/veg.png";
+import NonVeg from "../../assets/nonveg.png";
 import HeaderNav from "../Header/HeaderNav";
 
 const Details = () => {
@@ -20,21 +22,41 @@ const Details = () => {
               <div className="k__flex-item k__flex-item--33">
                 <img
                   className="details__image"
+                  onError={() => NoImage}
                   src={record?.image}
                   alt={record?.title}
                 />
               </div>
               <div className="k__flex-item k__flex-item--66">
                 <h3 className="details__heading">
-                  {record?.title ?? "Unnamed Dish"}
+                  {record?.title ?? "Unnamed Dish"} {` `}
+                  <img
+                    src={record?.vegetarian ? Veg : NonVeg}
+                    alt={record?.vegetarian ? "vegetarian" : "non-vegetarian"}
+                  />
                 </h3>
-                <p className="details__desc">{record?.instructions}</p>
+                <div className="details__desc" id="details__desc">
+                  <ul>
+                    {record?.analyzedInstructions?.[0]?.steps?.map(
+                      (item, index) => (
+                        <li key={`step-${index}`}>{item?.step}</li>
+                      )
+                    )}
+                  </ul>
+                </div>
                 <div className="k__flex k__flex--align-start k__flex--justify-start k__flex--wrap">
                   {record?.diets?.map((item, index) => (
                     <div className="k__flex-item" key={`chip-${index}`}>
-                      <Chip label={item} color="success" variant="outlined" />
+                      <div className="tags">
+                        <p>{item}</p>
+                      </div>
                     </div>
                   ))}
+                  <div className="k__flex-item">
+                    <div className="tags">
+                      <p>Costs Rs. {record?.pricePerServing} per serving</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
