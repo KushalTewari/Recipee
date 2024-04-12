@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import NoImage from "../../assets/NoImage.jpg";
 import HeaderNav from "../Header/HeaderNav";
 import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,7 +21,6 @@ const Home = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data?.recipes);
         setData(data?.recipes ?? []);
       })
       .catch((error) => {
